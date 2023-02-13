@@ -1,0 +1,11 @@
+.page__profile {
+  padding-top: 40px;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 480px) {
+  .page__profile {
+    padding-top:  38.25px;
+    margin-bottom: 36px;
+  }
+}
