@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
 const { createUser, login } = require('./controllers/users');
+const cors = require('./middlewares/cors');
 const auth = require('./middlewares/auth');
 const { signUp, signIn } = require('./middlewares/validation');
 const NotFoundError = require('./errors/NotFoundError');
@@ -14,6 +15,7 @@ const app = express();
 mongoose.connect('mongodb://localhost:27017/mestodb ');
 
 app.use(express.json());
+app.use(cors);
 
 app.use(helmet());
 app.use(requestLogger);
