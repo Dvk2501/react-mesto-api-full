@@ -72,9 +72,7 @@ module.exports.login = (req, res, next) => {
 
       return res.send({ token });
     })
-    .catch((err) => {
-      next(err);
-    });
+    .catch(next);
 };
 
 module.exports.getCurrentUser = (req, res, next) => {
